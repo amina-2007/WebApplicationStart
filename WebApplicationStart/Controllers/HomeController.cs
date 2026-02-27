@@ -26,8 +26,20 @@ namespace WebApplicationStart.Controllers
 
         public string Task1()
         {
+            DateTime dateTime = DateTime.Now;
+            if (dateTime.Hour >= 0 && dateTime.Hour <= 6)
+            { return "ДОБРОЕ УТРО"; }
+            if (dateTime.Hour >= 7 && dateTime.Hour <= 11)
+            { return "ДОБРЫЙ ДЕНЬ"; }
+            if (dateTime.Hour >= 12 && dateTime.Hour <= 17)
+            { return "ДОБРЫЙ ВЕЧЕР"; }
+            if (dateTime.Hour >= 18 && dateTime.Hour <= 23) //хотя возможно можно было и else
+            { return "ДОБРАЯ НОЧЬ"; }
             return "Тут решение первой задачи";
         }
+
+        public string Task2()
+        { return "бУДЕТ после 27.02.2026 18:25"; }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
