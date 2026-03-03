@@ -38,8 +38,11 @@ namespace WebApplicationStart.Controllers
             return "Тут решение первой задачи";
         }
 
-        public string Task2()
-        { return "бУДЕТ после 27.02.2026 18:25"; }
+        public string Task2(double a, double b)
+        {
+            
+            
+            return $"{a}+{b}={a+b}"; }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
