@@ -23,11 +23,16 @@ p, h1, a, ul, li, .container{
     color:darkkhaki;
 }
 
+    ul.test2 {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr); 
+        gap: 20px; 
+        padding: 20px;
+    }
+
 .test {
-    display: grid;
-    width: 250px;
-    height: 250px;
-    grid-template-columns: 250px 250px 250px;  
-    border-radius: 10px;
     background-color: black;
+    border-radius: 10px;
+    padding: 20px;
+    height: 250px;
 }

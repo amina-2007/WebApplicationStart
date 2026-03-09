@@ -27,14 +27,14 @@ namespace WebApplicationStart.Controllers
         public string Task1()
         {
             DateTime dateTime = DateTime.Now;
-            if (dateTime.Hour >= 0 && dateTime.Hour <= 6)
-            { return "ДОБРОЕ УТРО"; }
-            if (dateTime.Hour >= 7 && dateTime.Hour <= 11)
-            { return "ДОБРЫЙ ДЕНЬ"; }
-            if (dateTime.Hour >= 12 && dateTime.Hour <= 17)
-            { return "ДОБРЫЙ ВЕЧЕР"; }
-            if (dateTime.Hour >= 18 && dateTime.Hour <= 23)  
+            if (dateTime.Hour >= 0 && dateTime.Hour <= 5)
             { return "ДОБРАЯ НОЧЬ"; }
+            if (dateTime.Hour >= 6 && dateTime.Hour <= 11)
+            { return "ДОБРОЕ УТРО"; }
+            if (dateTime.Hour >= 12 && dateTime.Hour <= 17)
+            { return "ДОБРЫЙ ДЕНЬ"; }
+            if (dateTime.Hour >= 18 && dateTime.Hour <= 23)  
+            { return "ДОБРЫЙ ВЕЧЕР"; }
             return "Тут решение первой задачи";
         }
 
@@ -57,6 +57,35 @@ namespace WebApplicationStart.Controllers
 
             { return $"{a}*{b}={a * b}"; }
             return "0";
+
+        }
+
+        public string Task4(string first, string second, string op)
+        {
+            List<string> ops = new List<string> { "%2B", "-", "+", "/"};
+            if (!ops.Contains(op))
+            { return "Доступные символы:%2B    -   +   /"; }
+
+            double a =string.IsNullOrEmpty(first)?0: Convert.ToDouble(first);
+            double b = string.IsNullOrEmpty(second) ? 0 : Convert.ToDouble(second);
+            if (op == "%2B")
+
+                return $"{a}+{b}={a + b}";
+
+            if (op == "-")
+
+                return $"{a}-{b}={a - b}";
+            if (op == "*")
+
+            { return $"{a}*{b}={a * b}"; }
+
+            if (op == "/")
+
+            {if(b==0)
+                { return "На ноль делить нельзя."; }
+                return $"{a}/{b}={a / b}"; }
+            return $"{a}+{b}={a + b}";
+
 
         }
 
