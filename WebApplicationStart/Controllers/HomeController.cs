@@ -33,7 +33,7 @@ namespace WebApplicationStart.Controllers
             { return "ДОБРЫЙ ДЕНЬ"; }
             if (dateTime.Hour >= 12 && dateTime.Hour <= 17)
             { return "ДОБРЫЙ ВЕЧЕР"; }
-            if (dateTime.Hour >= 18 && dateTime.Hour <= 23) //хотя возможно можно было и else
+            if (dateTime.Hour >= 18 && dateTime.Hour <= 23)  
             { return "ДОБРАЯ НОЧЬ"; }
             return "Тут решение первой задачи";
         }
@@ -43,6 +43,22 @@ namespace WebApplicationStart.Controllers
             
             
             return $"{a}+{b}={a+b}"; }
+
+        public string Task3(double a, double b, string op)
+        {
+            if (op == "+")
+
+                return $"{a}+{b}={a + b}";
+
+            if (op == "-")
+
+                return $"{a}-{b}={a - b}";
+            if (op == "*")
+
+            { return $"{a}*{b}={a * b}"; }
+            return "0";
+
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
